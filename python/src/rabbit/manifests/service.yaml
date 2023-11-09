@@ -16,10 +16,10 @@ spec:
       port: 5672
       targetPort: 5672
 
-# To delete pods:
+# To delete resources created with these files:
 # kubectl delete -f ./
 
-# To apply 
+# To apply / create resources with these files:
 # kubectl apply -f ./
 
 # To scale down pods
