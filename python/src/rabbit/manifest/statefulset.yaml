@@ -11,7 +11,6 @@ spec:
     metadata:
       labels:
         app: rabbitmq
-
     spec:
       containers:
         - name: rabbitmq
@@ -23,11 +22,11 @@ spec:
             - name: amqp
               protocol: TCP
               containerPort: 5672
-          envForm:
+          envFrom:
             - configMapRef:
-              name: rabbitmq-configmap
+                name: rabbitmq-configmap
             - secretRef:
-              name: rabbitmq-secret
+                name: rabbitmq-secret
           volumeMounts:
             - mountPath: "/var/lib/rabbitmq"
               name: rabbitmq-volume
