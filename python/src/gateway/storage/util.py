@@ -15,8 +15,12 @@ def upload(file, fs, channel, access):
 	try:
 		channel.basic_publish(
 			exchange = "",
-			routing_key = "convert",
-			body = json.dumps(message)
+			routing_key = "video",
+			body = json.dumps(message),
+			properties = pika.BasicProperties(
+				delivery_mode = pika.spec.PERSISTENT_DELIVERY_MODE
+			),
 		)
-	except Exception as e:
+	except:
+		fs.delete(fid)
 		return "Internal server error", 500
