@@ -22,5 +22,5 @@ spec:
 # To apply / create resources with these files:
 # kubectl apply -f ./
 
-# To scale down pods
+# To scale down pods:
 # kubectl scale deployment --replicas=[int] [deployment](ex. gateway)
