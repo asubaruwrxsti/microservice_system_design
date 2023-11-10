@@ -1,0 +1,16 @@
+To delete resources created with these files:
+kubectl delete -f ./
+
+To apply / create resources with these files:
+kubectl apply -f ./
+
+To scale down pods:
+kubectl scale deployment --replicas=[int] [deployment](ex. gateway)
+
+To list services
+minikube service --all
+
+To view logs
+kubectl logs -f [deployment]
+
+To make service accessible, use NodePort instead of ClusterIP
