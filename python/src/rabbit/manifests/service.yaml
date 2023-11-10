@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: rabbitmq
 spec:
-  type: ClusterIP # ClusterIP or NodePort
+  type: NodePort # ClusterIP or NodePort
   selector:
     app: rabbitmq
   ports:
@@ -15,12 +15,3 @@ spec:
       protocol: TCP
       port: 5672
       targetPort: 5672
-
-# To delete resources created with these files:
-# kubectl delete -f ./
-
-# To apply / create resources with these files:
-# kubectl apply -f ./
-
-# To scale down pods:
-# kubectl scale deployment --replicas=[int] [deployment](ex. gateway)
